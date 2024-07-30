@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ndc",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "ndc.py",
+            "console": "integratedTerminal",
+            "args": []
+        },
+        {
+            "name": "no ndc",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "no_ndc.py",
+            "console": "integratedTerminal",
+            "args": []
+        }
+    ]
+}
