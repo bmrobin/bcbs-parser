@@ -34,6 +34,17 @@ pip install -r requirements.txt
 
 Execute python scripts via `python {script_name.py}` -- see each script's `__main__` section for more information.
 
+1. `ndc.py` -- "NDC" code sheet parser 
+
+    This reads files like [ndc-example.pdf](https://github.com/bmrobin/bcbs-parser/blob/main/ndc-example.pdf) and 
+    outputs a TSV file of the table contents from each page in the file.  The file's "header row" in the table is not 
+    included in the TSV file output.
+
+2. `no_ndc.py` -- "No NDC" code sheet parser
+    See above
+
+    This reads files like [no-ndc-example.pdf](https://github.com/bmrobin/bcbs-parser/blob/main/no-ndc-example.pdf)
+
 ### Why TSV?
 
 Using comma-separated value files (CSV) proves difficult to work with because of commas included in the dollar amount 
