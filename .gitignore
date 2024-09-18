@@ -3,3 +3,6 @@ venv/
 
 # macOS
 .DS_Store
+
+# program-generated output
+output*.tsv
