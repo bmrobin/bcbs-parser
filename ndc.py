@@ -1,10 +1,12 @@
 from pypdf import PdfReader
 
+# exact text-matching values
 header_value = "Procedure NDC Maximum \nAllowableEffective \nDateEnd Date Procedure NDC Maximum \nAllowableEffective \nDateEnd Date\n"
 footer_value = "\nA Division of Health Care Service Corporation"
 
 
 def run(date_pattern: str):
+    # !! replace this filename with the INPUT PDF file in the current directory you wish to parse !!
     reader = PdfReader("ndc-example.pdf")
     data = list()
     for page_num in range(0, reader.get_num_pages()):
@@ -25,6 +27,7 @@ def run(date_pattern: str):
 
         data.append(rows)
 
+    # !! replace this filename with the OUTPUT TSV filename to write to in the current directory !!
     with open("ndc-output.tsv", "wt") as outfile:
         for chunk in data:
             for line in chunk:

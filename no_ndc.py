@@ -2,6 +2,7 @@ import re
 
 from pypdf import PdfReader
 
+# exact text-matching values
 header_value = "Procedure Maximum \nAllowableEffective \nDateEnd Date Procedure Maximum \nAllowableEffective \nDateEnd Date\n"
 first_page_footer_value = (
     "2024 CPT/HCPCS Drug Fee Schedule\nThis schedule is not a guaranty of payment"
@@ -10,6 +11,7 @@ other_pages_footer_value = "\nA Division of Health Care Service Corporation"
 
 
 def run():
+    # !! replace this filename with the INPUT PDF file in the current directory you wish to parse !!
     reader = PdfReader("no-ndc-example.pdf")
     data = list()
     for page_num in range(0, reader.get_num_pages()):
@@ -38,6 +40,7 @@ def run():
                 row_value = (result[num], *result[num + 1].strip().split(" "))
                 data.append(row_value)
 
+    # !! replace this filename with the OUTPUT TSV filename to write to in the current directory !!
     with open("no-ndc-output.tsv", "wt") as outfile:
         for chunk in ["\t".join(val) for val in data]:
             out = f"{chunk}\n"
