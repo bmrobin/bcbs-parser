@@ -1,7 +1,7 @@
 from pypdf import PdfReader
 
 # exact text-matching values
-header_value = "Procedure NDC Maximum \nAllowableEffective \nDateEnd Date Procedure NDC Maximum \nAllowableEffective \nDateEnd Date\n"
+header_value = "Procedure NDC Maximum \nAllowable\nEffective \nDate\nEnd Date Procedure NDC Maximum \nAllowable\nEffective \nDate\nEnd Date\n"
 footer_value = "\nA Division of Health Care Service Corporation"
 
 
